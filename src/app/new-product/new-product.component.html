@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="col-md-6 offset-md-3">
+    <div class="card mt-5">
+      <div class="card-header">
+        ADD PRODUCT
+
+      </div>
+      <div class="card-body">
+
+        <form [formGroup]="userFormGroup" (ngSubmit)="handlerAddProduct()">
+          <div class="mb-3">
+            <label class="form-label">Product name</label>
+            <input formControlName="name" type="text" class="form-control">
+            <small class="text-danger" *ngIf="userFormGroup.controls['name'].errors && userFormGroup.controls['name'].touched">
+              {{getErrorMessage("name",userFormGroup.controls['name'].errors)}}
+            </small>
+            <br>
+            <label class="form-label">Price</label>
+            <input formControlName="price" type="number" class="form-control">
+
+
+            <button [disabled]="userFormGroup.invalid"  class="btn btn-primary mt-4" type="submit">Save product</button>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+

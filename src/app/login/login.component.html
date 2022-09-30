@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-md-6 offset-md-3">
+    <div class="card mt-5">
+      <div class="card-header">
+        Authentification
+        <div class="text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+      </div>
+      <div class="card-body">
+
+        <form [formGroup]="userFormGroup" (ngSubmit)="handlerLogin()">
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input formControlName="username" type="text" class="form-control">
+            <label class="form-label">Password</label>
+            <input formControlName="password" type="password" class="form-control">
+            <button class="btn btn-primary mt-4" type="submit">Login</button>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
